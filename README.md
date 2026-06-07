@@ -183,12 +183,6 @@ Place screenshots in `docs/screenshots/` after launching the Compose stack:
 - `prompt-versions.png`
 - `provider-health.png`
 
-## Resume Bullets
-
-- Built an AI gateway with FastAPI supporting OpenAI-style chat completions, API-key auth, provider routing, fallback logic, and standardized responses.
-- Implemented LLMOps telemetry with PostgreSQL usage logs, cost estimation, prompt versioning, Redis rate limits, Prometheus metrics, and Grafana dashboards.
-- Shipped a full-stack dashboard in React with Docker Compose, Kubernetes manifests, CI/CD, and AWS EKS/RDS/ElastiCache deployment guidance.
-
 ## Project Structure
 
 ```text
