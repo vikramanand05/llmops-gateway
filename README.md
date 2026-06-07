@@ -219,3 +219,18 @@ llmops-gateway/
   .env.example
   README.md
 ```
+
+
+## Roadmap
+
+- [ ] Add real Anthropic provider client
+- [ ] Add real Gemini provider client
+- [ ] Add Ollama/local model integration
+- [ ] Add Alembic database migrations
+- [ ] Add SDK examples for Python and JavaScript
+- [ ] Add frontend authentication
+- [ ] Add provider retry policies
+- [ ] Add distributed request tracing
+- [ ] Add CSV export for usage logs
+- [ ] Add Helm chart for Kubernetes deployment
+- [ ] Add Terraform AWS deployment
