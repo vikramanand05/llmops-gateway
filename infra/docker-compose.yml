@@ -81,6 +81,7 @@ services:
       context: ../backend
     command: ["pytest", "-q"]
     environment:
+      PYTHONPATH: /app
       DATABASE_URL: sqlite:///./test_llmops.db
       RATE_LIMIT_BACKEND: memory
       ADMIN_TOKEN: test-admin-token
