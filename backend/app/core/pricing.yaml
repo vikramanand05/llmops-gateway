@@ -1,0 +1,25 @@
+models:
+  gpt-4o-mini:
+    provider: openai
+    prompt_per_1k: 0.00015
+    completion_per_1k: 0.00060
+    priority: 10
+    expected_latency_ms: 900
+  gemini-1.5-flash:
+    provider: gemini
+    prompt_per_1k: 0.000075
+    completion_per_1k: 0.00030
+    priority: 20
+    expected_latency_ms: 750
+  claude-3-haiku:
+    provider: anthropic
+    prompt_per_1k: 0.00025
+    completion_per_1k: 0.00125
+    priority: 30
+    expected_latency_ms: 1100
+  llama3-local:
+    provider: ollama
+    prompt_per_1k: 0.0
+    completion_per_1k: 0.0
+    priority: 40
+    expected_latency_ms: 2500

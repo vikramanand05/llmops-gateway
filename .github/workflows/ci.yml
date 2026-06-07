@@ -1,0 +1,58 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  backend:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install backend dependencies
+        run: pip install -r requirements.txt
+      - name: Lint backend
+        run: ruff check app tests
+      - name: Test backend
+        run: pytest --cov=app --cov-report=term-missing
+
+  frontend:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install frontend dependencies
+        run: npm install
+      - name: Build frontend
+        run: npm run build
+
+  containers:
+    runs-on: ubuntu-latest
+    needs: [backend, frontend]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build Docker images
+        run: docker compose -f infra/docker-compose.yml build backend frontend
+      - name: Run docker-compose test
+        run: docker compose -f infra/docker-compose.yml --profile test run --rm backend-test
+
+  deploy-placeholder:
+    runs-on: ubuntu-latest
+    needs: [containers]
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - name: AWS EKS deployment placeholder
+        run: |
+          echo "Authenticate to AWS, push images to ECR, update Kubernetes image tags, and apply manifests."
