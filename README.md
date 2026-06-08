@@ -1,6 +1,6 @@
 # LLMOps Gateway
 
-LLMOps Gateway is a recruiter-friendly AI gateway and LLMOps platform inspired by Portkey and Langfuse. It demonstrates a production-style FastAPI service, model routing, API-key management, usage and cost tracking, prompt versioning, Redis rate limiting, PostgreSQL persistence, React dashboards, monitoring, Docker, Kubernetes, CI/CD, and AWS-ready deployment patterns.
+LLMOps Gateway is a AI gateway and LLMOps platform inspired by Portkey and Langfuse. It demonstrates a production-style FastAPI service, model routing, API-key management, usage and cost tracking, prompt versioning, Redis rate limiting, PostgreSQL persistence, React dashboards, monitoring, Docker, Kubernetes, CI/CD, and AWS-ready deployment patterns.
 
 The project runs without paid LLM provider keys because the default provider is a realistic mock client. You can later add OpenAI, Anthropic, Gemini, or Ollama credentials through environment variables.
 
